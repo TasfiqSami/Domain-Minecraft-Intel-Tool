@@ -1,4 +1,4 @@
 {
     "quboCMD":"java -Dfile.encoding=UTF-8 -jar quboscanner-0.3.7-jar-with-dependencies.jar -port [ports] -th [threads] -ti [timeout] -range [ip]",
-    "botToken":"<Put your Bot Token here>"
+    "botToken":"PUT YOUR BOT TOKEN HERE"
 }
