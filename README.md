@@ -34,9 +34,11 @@ This bot also allows for the retrieval of the Universally Unique Identifier (UUI
 ```
 pip install requests
 ```
+
 ```
 pip install mcstatus
 ```
+
 ```
 pip install discord
 ```
