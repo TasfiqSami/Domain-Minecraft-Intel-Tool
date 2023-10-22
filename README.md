@@ -48,8 +48,7 @@ Disord Link #1 [mikthegmr](https://discord.com/invite/gj6uJaj4)
 
 Contributors names and contact info
 
-mikthegmr  
-[Discord](https://discord.com/invite/gj6uJaj4)
+mikthegmr [Contract](https://discord.com/invite/gj6uJaj4)
 
 Tasfiq
 [Contract](https://bio.link/tasfiqah)
