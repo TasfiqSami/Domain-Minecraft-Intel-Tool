@@ -48,10 +48,11 @@ Disord Link #1 [mikthegmr](https://discord.com/invite/gj6uJaj4)
 
 Contributors names and contact info
 
- Dominique Pizzie  
- [Discord](https://discord.com/invite/gj6uJaj4)
- Tasfiq
- [Contract](https://bio.link/tasfiqah)
+mikthegmr  
+[Discord](https://discord.com/invite/gj6uJaj4)
+
+Tasfiq
+[Contract](https://bio.link/tasfiqah)
 
 ## Version History
 
