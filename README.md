@@ -18,26 +18,19 @@ Furthermore, it can discern the server software employed by any Minecraft server
 
 This bot also allows for the retrieval of the Universally Unique Identifier (UUID) of both premium and cracked players, facilitating the determination of the existence of individuals with the premium usernames you seek.
 
-## Getting Started
+## Hosting on Local Host
 
-### Installing Dependencies
+### Dependencies
 
-* Hosting on Local Host
-* 
+* Must have [Python](https://www.python.org/downloads/) downloaded
 
 ### Downloading and Installing
 
 * Download the release source code from [here](https://github.com/TasfiqSami/Minecraft-Info-and-IP-info-BOT/releases/tag/0.0.1)
 * After downloading the file extract it.
 
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
+### Installing Dependencies
+* Open 
 
 ## Authors
 
