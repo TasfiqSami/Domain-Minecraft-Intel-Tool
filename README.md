@@ -1,7 +1,7 @@
 # Minecraft-Info-and-IP-info-BOT
 
  **Commands:**
-* !player <player name> 
+* !player <player name> > Shows the premium and cracked UUID of the player.
 > Shows the premium and cracked UUID of the player.
 * !ipinfo <ip> 
 > Shows the info about the IP address.
