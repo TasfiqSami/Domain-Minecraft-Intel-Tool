@@ -38,12 +38,11 @@ This bot also allows for the retrieval of the Universally Unique Identifier (UUI
 code blocks for commands
 ```
 
-## Help
+## Support
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+Disord Link #1 [Tasfiq](https://discord.gg/qrexmc)
+Disord Link #1 [mikthegmr](https://discord.com/invite/gj6uJaj4)
+
 
 ## Authors
 
