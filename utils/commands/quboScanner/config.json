@@ -1,0 +1,5 @@
+{
+    "quboCMD":"java -Dfile.encoding=UTF-8 -jar qubo.jar -port [ports] -th [threads] -ti [timeout] -range [ip]",
+    "quboThreads":"500",
+    "quboTimeOut":"2000"
+}
