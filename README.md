@@ -1,10 +1,10 @@
 # Minecraft-Info-and-IP-info-BOT
 
-* Commands:
+ **Commands:**
 > !player <player name> - Shows the premium and cracked UUID of the player.
-> !ipinfo <ip> - Shows the info about the IP address.
+* !ipinfo <ip> - Shows the info about the IP address.
 > !domain <domain> - Shows the real ip of the domain.
-> !server <server ip> - Shows the server motd, version or server software, protocol and online players of the server.
+* !server <server ip> - Shows the server motd, version or server software, protocol and online players of the server.
 
 ## Description
 
