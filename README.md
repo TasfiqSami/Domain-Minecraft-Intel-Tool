@@ -30,7 +30,10 @@ This bot also allows for the retrieval of the Universally Unique Identifier (UUI
 * After downloading the file extract it.
 
 ### Installing Dependencies
-* Open 
+* Open the folder and use VS Code or GitBash and type
+```pip install requests```
+```pip install mcstatus```
+```pip install discord```
 
 ## Authors
 
