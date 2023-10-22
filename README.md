@@ -1,17 +1,25 @@
-# Project Title
+# Minecraft-Info-and-IP-info-BOT
 
-Simple overview of use/purpose.
+Commands:
+!player <player name> - Shows the premium and cracked UUID of the player.
+!ipinfo <ip> - Shows the info about the IP address.
+!domain <domain> - Shows the real ip of the domain.
+!server <server ip> - Shows the server motd, version or server software, protocol and online players of the server.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+This bot shows the real ip of any domain for example google.com or any minecraft server like hypixel.com
+You can also get information about the IP like ip of google or your friends IP you found or your enemys IP
+You can know about Server software of any minecraft server they are using like Bungeecord, Velocity, Paper, Spigot and the Version 
+You can also copy the MOTD of any minecraft server
+You can get UUID of any premium or cracked player this allows allows to find out if anyone exist with a premium Username you search
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Hosting on Local Host
+* 
 
 ### Installing
 
@@ -37,8 +45,8 @@ command to run if program contains helper info
 
 Contributors names and contact info
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+ Dominique Pizzie  
+ [@DomPizzie](https://twitter.com/dompizzie)
 
 ## Version History
 
