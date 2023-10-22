@@ -1,4 +1,4 @@
-# Minecraft-Info-and-IP-info-BOT
+# Domain & Minecraft Intel Tool
 
  **Commands:**
 * !player <player name> 
