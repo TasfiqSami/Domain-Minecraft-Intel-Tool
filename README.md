@@ -30,7 +30,7 @@ This bot also allows for the retrieval of the Universally Unique Identifier (UUI
 * After downloading the file extract it.
 
 ### Installing Dependencies
-* Open the folder and use VS Code or GitBash and type
+* Open the folder and using VS Code or GitBash or use Termial/Command Prompt locate the folder of the bot and type
 ```
 pip install requests
 ```
