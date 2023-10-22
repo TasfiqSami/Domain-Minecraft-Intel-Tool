@@ -1,7 +1,7 @@
 # Minecraft-Info-and-IP-info-BOT
 
  **Commands:**
-* !player <player name> > Shows the premium and cracked UUID of the player.
+* !player <player name> 
 > Shows the premium and cracked UUID of the player.
 * !ipinfo <ip> 
 > Shows the info about the IP address.
@@ -12,23 +12,23 @@
 
 ## Description
 
-This bot shows the real ip of any domain for example google.com or any minecraft server like hypixel.com
-You can also get information about the IP like ip of google or your friends IP you found or your enemys IP
-You can know about Server software of any minecraft server they are using like Bungeecord, Velocity, Paper, Spigot and the Version 
-You can also copy the MOTD of any minecraft server
-You can get UUID of any premium or cracked player this allows allows to find out if anyone exist with a premium Username you search
+This bot is proficient in revealing the true IP address associated with any given domain, such as google.com or any Minecraft server, including but not limited to hypixel.com. Moreover, it possesses the capability to provide detailed information regarding IP addresses, whether they pertain to Google, your acquaintances, or adversaries.
+
+Furthermore, it can discern the server software employed by any Minecraft server, including options such as Bungeecord, Velocity, Paper, and Spigot, along with the specific version in use. Additionally, it offers the functionality to extract and duplicate the Message of the Day (MOTD) from any Minecraft server.
+
+This bot also allows for the retrieval of the Universally Unique Identifier (UUID) of both premium and cracked players, facilitating the determination of the existence of individuals with the premium usernames you seek.
 
 ## Getting Started
 
-### Dependencies
+### Installing Dependencies
 
 * Hosting on Local Host
 * 
 
-### Installing
+### Downloading and Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Download the release source code from [here](https://github.com/TasfiqSami/Minecraft-Info-and-IP-info-BOT/releases/tag/0.0.1)
+* After downloading the file extract it.
 
 ### Executing program
 
