@@ -5,6 +5,8 @@
 > Shows the premium and cracked UUID of the player.
 * !ipinfo <ip> 
 > Shows the info about the IP address.
+* !ipget <playername> 
+> Shows IP address of dumped databases.
 * !domain <domain> 
 > Shows the real ip of the domain.
 * !server <server ip> 

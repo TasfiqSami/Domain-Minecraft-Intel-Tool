@@ -2,25 +2,30 @@ from json import load
 import discord
 import logging
 
-from utils.commands.uuid.getPlayerUUID import player_uuid
+import threading
+from utils.messages.messages import get_message
+
+from utils.commands.uuid.uuid import player
 from utils.commands.domain2IPConverter.domain2IPConverter import convertDomain
 from utils.commands.ipInfo.ipInfo import ipInfo
 from utils.commands.help.help import help
 from utils.commands.support.support import support
+from utils.commands.dumpedIPs.getip import getip
 from utils.commands.server.returnData import getServerData
 
 logging.basicConfig(format='[%(asctime)s] - [%(levelname)s] - %(message)s', 
                     level=logging.INFO)
 
-mainLogger = logging.getLogger()
+LOGGER = logging.getLogger()
 
-intents = discord.Intents(32767)
+print(discord.Intents.all())
+intents = discord.Intents(discord.Intents.all())
 
 
 with open('config.json', 'r')as configFile:
     config = load(configFile)
     quboCMD = config['quboCMD']
-    botToken = config['botToken']
+    BOT_TOKEN = config['BOT_TOKEN']
 
 intents = discord.Intents.default()
 intents.members = True
@@ -34,38 +39,33 @@ async def on_ready():
     botUserName = bot.user.name
     botDiscriminator = bot.user.discriminator
     botID = bot.user.id
-    mainLogger.info(f'Bot started with username {botUserName}#{botDiscriminator}, id:{botID}')
-
+    LOGGER.info(f'Bot started with username {botUserName}#{botDiscriminator}, id:{botID}')
 
 @bot.event 
 async def on_message(message):
-    mainLogger.info(f'Message sent in {message.channel} by {message.id}. The message was \'{message.content}\'')
     if message.author.id == botID:
         return
-
-    # if message.content.startswith('!'):
-    #     await message.channel.send('Commands are only available in commands channel')
-    #     return
+    LOGGER.info(f'Message sent in {message.channel} by {message.author}. The message was \'{message.content}\'')
 
     if message.content.startswith('!player '):
         try:
             _, playername = message.content.split(' ')
-        except Exception as e:
-            await message.channel.send('```The given playername contains a space. Spaces in playernames are not allowed!``` ')    
-        await message.channel.send(f'''```{player_uuid(playername)}```''')
+        except:
+            await message.channel.send(get_message('command.player'))    
+        await message.channel.send(f'''```{player(playername)}```''')
 
     if message.content.startswith('!domain '):
         try:
             _, domain = message.content.split(' ')
-        except Exception as e:
-            await message.channel.send('```The given domain contains a space. Spaces in domains are not allowed!``` ')            
+        except:
+            await message.channel.send(get_message('command.domain'))            
         await message.channel.send(f''' {convertDomain(domain)} ''')
     
     if message.content.startswith('!ipinfo '):
         try:
             _, ip = message.content.split(' ')
-        except Exception as e:
-            await message.channel.send('```The given ip is inavlid!``` ')            
+        except:
+            await message.channel.send(get_message('command.ipinfo'))            
         await message.channel.send(f''' {ipInfo(ip)}''')
 
     if message.content.startswith('!help'):        
@@ -79,12 +79,18 @@ async def on_message(message):
         try:
             _, domain = message.content.split(' ')
         except:
-            await message.channel.send('```The given domain contains a space. Spaces in domains are not allowed!``` ')   
+            await message.channel.send(get_message('command.server'))   
         data = getServerData(domain)
         
         motd,version,protocal,players = data
         await message.channel.send(f''' ``` {motd}\n {version}\n {protocal}\n {players}\n```''')
-        
+
+    if message.content.startswith('!ipget '):
+        try:
+            _, username = message.content.split(' ')
+        except:
+            await message.channel.send(get_message('command.ipget'))            
+        await message.channel.send(f''' {getip(username)}''')
 
 
-bot.run(botToken)
+bot.run(BOT_TOKEN)
