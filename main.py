@@ -24,7 +24,6 @@ intents = discord.Intents(discord.Intents.all())
 
 with open('config.json', 'r')as configFile:
     config = load(configFile)
-    quboCMD = config['quboCMD']
     BOT_TOKEN = config['BOT_TOKEN']
 
 intents = discord.Intents.default()

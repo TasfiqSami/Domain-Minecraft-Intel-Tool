@@ -1,4 +1,3 @@
 {
-    "quboCMD": "java -Dfile.encoding=UTF-8 -jar quboscanner-0.3.7-jar-with-dependencies.jar -port [ports] -th [threads] -ti [timeout] -range [ip]",
-    "BOT_TOKEN": "MTE0NjA3NTU5OTUzNDgzNzg0MA.G5TdSl.akzKmKJhqtUm4Ss_OWbIOsxHr9gZJWhENjvKhY"
+    "BOT_TOKEN": "MTE0NjA3NTU5OTUzNDgzNzg0MA.GQ3pfa.7N3y32m_xXGObau05YmwkmnJbQd9ZuiW7vtTLs"
 }
