@@ -4,6 +4,7 @@ import logging
 
 import threading
 from utils.messages.messages import get_message
+from utils.commands.command_parser import parse_command
 
 from utils.commands.uuid.uuid import player
 from utils.commands.domain2IPConverter.domain2IPConverter import convertDomain
@@ -13,7 +14,7 @@ from utils.commands.support.support import support
 from utils.commands.dumpedIPs.getip import getip
 from utils.commands.server.returnData import getServerData
 
-logging.basicConfig(format='[%(asctime)s] - [%(levelname)s] - %(message)s', 
+logging.basicConfig(format='[%(asctime)s] - [%(levelname)s] - %(message)s',
                     level=logging.INFO)
 
 LOGGER = logging.getLogger()
@@ -21,8 +22,7 @@ LOGGER = logging.getLogger()
 print(discord.Intents.all())
 intents = discord.Intents(discord.Intents.all())
 
-
-with open('config.json', 'r')as configFile:
+with open('config.json', 'r') as configFile:
     config = load(configFile)
     BOT_TOKEN = config['BOT_TOKEN']
 
@@ -40,56 +40,53 @@ async def on_ready():
     botID = bot.user.id
     LOGGER.info(f'Bot started with username {botUserName}#{botDiscriminator}, id:{botID}')
 
-@bot.event 
+
+@bot.event
 async def on_message(message):
     if message.author.id == botID:
         return
-    LOGGER.info(f'Message sent in {message.channel} by {message.author}. The message was \'{message.content}\'')
 
-    if message.content.startswith('!player '):
-        try:
-            _, playername = message.content.split(' ')
-        except:
-            await message.channel.send(get_message('command.player'))    
-        await message.channel.send(f'''```{player(playername)}```''')
+    LOGGER.info(f"Message sent in {message.channel} by {message.author}. The message was '{message.content}'")
 
-    if message.content.startswith('!domain '):
-        try:
-            _, domain = message.content.split(' ')
-        except:
-            await message.channel.send(get_message('command.domain'))            
-        await message.channel.send(f''' {convertDomain(domain)} ''')
-    
-    if message.content.startswith('!ipinfo '):
-        try:
-            _, ip = message.content.split(' ')
-        except:
-            await message.channel.send(get_message('command.ipinfo'))            
-        await message.channel.send(f''' {ipInfo(ip)}''')
+    command, argument = parse_command(message.content)
 
-    if message.content.startswith('!help'):        
+    if command == "!player":
+        if argument is None:
+            await message.channel.send(get_message('command.player'))
+            return
+        await message.channel.send(f'''```{player(argument)}```''')
+
+    elif command == "!domain":
+        if argument is None:
+            await message.channel.send(get_message('command.domain'))
+            return
+        await message.channel.send(f''' {convertDomain(argument)} ''')
+
+    elif command == "!ipinfo":
+        if argument is None:
+            await message.channel.send(get_message('command.ipinfo'))
+            return
+        await message.channel.send(f''' {ipInfo(argument)}''')
+
+    elif command == "!help" and argument is None:
         await message.channel.send(f''' {help()} ''')
 
-    if message.content.startswith('!support'):        
+    elif command == "!support" and argument is None:
         await message.channel.send(f''' {support()} ''')
 
+    elif command == "!server":
+        if argument is None:
+            await message.channel.send(get_message('command.server'))
+            return
+        data = getServerData(argument)
+        motd, version, protocol, players = data
+        await message.channel.send(f''' ``` {motd}\n {version}\n {protocol}\n {players}\n```''')
 
-    if message.content.startswith('!server '):
-        try:
-            _, domain = message.content.split(' ')
-        except:
-            await message.channel.send(get_message('command.server'))   
-        data = getServerData(domain)
-        
-        motd,version,protocal,players = data
-        await message.channel.send(f''' ``` {motd}\n {version}\n {protocal}\n {players}\n```''')
-
-    if message.content.startswith('!ipget '):
-        try:
-            _, username = message.content.split(' ')
-        except:
-            await message.channel.send(get_message('command.ipget'))            
-        await message.channel.send(f''' {getip(username)}''')
+    elif command == "!ipget":
+        if argument is None:
+            await message.channel.send(get_message('command.ipget'))
+            return
+        await message.channel.send(f''' {getip(argument)}''')
 
 
 bot.run(BOT_TOKEN)
